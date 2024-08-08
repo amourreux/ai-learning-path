@@ -17,5 +17,10 @@
 
 > langchain-cli --version # <-- Make sure the version is at least 0.0.22
 
+
+### run & dev
+
+`streamlit run /Users/portakale/PycharmProjects/commencisAIPath/chatbot.py`
+
 ### links 
 - https://python.langchain.com/v0.2/docs/versions/v0_2/
