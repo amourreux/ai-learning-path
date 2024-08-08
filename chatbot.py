@@ -5,6 +5,8 @@ from PyPDF2 import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
+from langchain.chains.question_answering import load_qa_chain
+from langchain_community.chat_models import ChatOpenAI
 
 # Load environment variables from the .env file
 load_dotenv()
@@ -47,6 +49,17 @@ if file is not None:
 
     if user_question:
         match = vector_store.similarity_search(user_question)
-        st.write(match)
+        # st.write(match)
 
+        # define the LLM
+        llm = ChatOpenAI(
+            openai_api_key=api_key,
+            temperature=0,
+            max_tokens=1000,
+            model_name="gpt-3.5-turbo"
+        )
 
+        # output result
+        chain = load_qa_chain(llm, chain_type='stuff')
+        response = chain.run(input_documents=match,question=user_question)
+        st.write(response)
