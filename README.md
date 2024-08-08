@@ -1,9 +1,10 @@
 ## a project for learning sandbox
 
-### todos
-- add some. - cody.maverick
 
+### install reqs.
 
+- install `pyenv` via brew
+- install `python3.11.6` via `pyenv`
 
 ### steps:
 
@@ -15,7 +16,6 @@
 - pip install langchain-cli
 
 > langchain-cli --version # <-- Make sure the version is at least 0.0.22
-
 
 ### links 
 - https://python.langchain.com/v0.2/docs/versions/v0_2/
