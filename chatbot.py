@@ -27,7 +27,7 @@ if file is not None:
     for page in pdf_reader.pages:
         text +=page.extract_text()
 
-# break it into chunks
+    # break it into chunks
     text_splitter = RecursiveCharacterTextSplitter(
         separators=list("\n"),
         chunk_size=1000,
@@ -41,3 +41,6 @@ if file is not None:
 
     # creating vector store - FAISS
     vector_store = FAISS.from_texts(chunks, embeddings)
+
+    # get user question
+    st.text_input("type your question here")
