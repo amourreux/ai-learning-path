@@ -43,4 +43,10 @@ if file is not None:
     vector_store = FAISS.from_texts(chunks, embeddings)
 
     # get user question
-    st.text_input("type your question here")
+    user_question = st.text_input("type your question here")
+
+    if user_question:
+        match = vector_store.similarity_search(user_question)
+        st.write(match)
+
+
