@@ -14,6 +14,7 @@
 - pip install openai
 - pip install tiktoken
 - pip install langchain-cli
+- pip install -U langchain-openai
 
 > langchain-cli --version # <-- Make sure the version is at least 0.0.22
 
